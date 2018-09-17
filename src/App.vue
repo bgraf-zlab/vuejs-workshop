@@ -3,16 +3,18 @@
     <img src="./assets/logo.png" class="float-right">
     <product-list v-on:addProduct="addProductToBasket" />
     <basket v-bind:products="productsInBasket" />
+    <admin-view v-on:productCreated="handleProductCreation" />
   </div>
 </template>
 
 <script>
 import Basket from './components/Basket.vue';
 import ProductList from './components/ProductList.vue';
+import AdminView from './components/AdminView.vue';
 
 export default {
   name: 'app',
-  components: { Basket, ProductList },
+  components: { Basket, ProductList, AdminView },
   data: function() {
     return {
       productsInBasket: []
@@ -22,6 +24,10 @@ export default {
   	addProductToBasket: function(product) {
     	this.productsInBasket.push(product);
     },
+    handleProductCreation: function(product) {
+      console.log(product);
+      // ToDo: VueX store for products...
+    }
   }
 }
 </script>
