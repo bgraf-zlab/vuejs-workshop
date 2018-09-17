@@ -1,34 +1,20 @@
 <template>
   <div id="app" class="container my-4 p-4">
     <img src="./assets/logo.png" class="float-right">
-    <h2>Products:</h2>
-    <ul>
-      <li v-for="product in products" class="m-2">
-        <strong>
-          {{ product.name }}: {{ product.price }}€
-        </strong>
-        <button class="btn btn-sm btn-primary"
-                v-on:click="addProductToBasket(product)">
-          Add to basket
-        </button>
-      </li>
-    </ul>
+    <product-list v-on:addProduct="addProductToBasket" />
     <basket v-bind:products="productsInBasket" />
   </div>
 </template>
 
 <script>
-import Basket from './components/Basket.vue'
+import Basket from './components/Basket.vue';
+import ProductList from './components/ProductList.vue';
 
 export default {
   name: 'app',
-  components: { Basket },
+  components: { Basket, ProductList },
   data: function() {
     return {
-      products: [
-        { name: 'Schaufel', price: 50 },
-        { name: 'Fork', price: 70 }
-      ],
       productsInBasket: []
     }
   },
