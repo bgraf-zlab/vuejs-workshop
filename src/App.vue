@@ -1,5 +1,6 @@
 <template>
-  <div id="app" class="container my-3 p-3">
+  <div id="app" class="container my-4 p-4">
+    <img src="./assets/logo.png" class="float-right">
     <h2>Products:</h2>
     <ul>
       <li v-for="product in products" class="m-2">
