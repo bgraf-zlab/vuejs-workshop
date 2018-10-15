@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="container my-4 p-4">
     <img src="./assets/logo.png" class="float-right">
-    <product-list v-on:addProduct="addProductToBasket" />
+    <product-list v-bind:products="products" v-on:addProduct="addProductToBasket" />
     <basket v-bind:products="productsInBasket" />
     <admin-view v-on:productCreated="handleProductCreation" />
   </div>
@@ -17,6 +17,10 @@ export default {
   components: { Basket, ProductList, AdminView },
   data: function() {
     return {
+      products: [
+        { name: 'Schaufel', price: 50 },
+        { name: 'Fork', price: 70 }
+      ],
       productsInBasket: []
     }
   },
@@ -25,8 +29,7 @@ export default {
     	this.productsInBasket.push(product);
     },
     handleProductCreation: function(product) {
-      console.log(product);
-      // ToDo: VueX store for products...
+      this.products.push(product);
     }
   }
 }

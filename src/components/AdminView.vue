@@ -10,7 +10,9 @@
              placeholder="Price" 
              v-model="price"
              class="form-control form-control-sm col-3 mb-2" />
-      <button class="btn btn-sm btn-primary" v-on:click.prevent="createProduct">Create product</button>
+      <button class="btn btn-sm btn-primary" v-on:click.prevent="createProduct" :class="{ disabled: name === null }">
+        Create product
+      </button>
     </form>
   </div>
 </template>
@@ -28,7 +30,7 @@ export default {
   	createProduct: function() {
       let product = {
         name: this.name,
-        price: this.price
+        price: parseInt(this.price)
       }
       this.$emit('productCreated', product);
       this.name = null;

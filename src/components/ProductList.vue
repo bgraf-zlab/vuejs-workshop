@@ -3,9 +3,7 @@
     <h2>Products:</h2>
     <ul>
       <li v-for="product in products" class="m-2">
-        <strong>
-          {{ product.name }}: {{ product.price }}€
-        </strong>
+        <product v-bind:name="product.name" v-bind:price="product.price"></product>
         <button class="btn btn-sm btn-primary"
                 v-on:click="addProductToBasket(product)">
           Add to basket
@@ -16,16 +14,18 @@
 </template>
 
 <script>
+import Product from './Product.vue'
+
 export default {
   name: 'product-list',
+  components: { Product },
   data: function() {
 		return {
-      products: [
-        { name: 'Schaufel', price: 50 },
-        { name: 'Fork', price: 70 }
-      ]
     }
   },
+  props: [
+    'products'
+  ],
   methods: {
   	addProductToBasket: function(product) {
       this.$emit('addProduct', product)
