@@ -19,3 +19,10 @@ npm run build
 ```
 npm run lint
 ```
+
+### With Docker:
+
+i.e.
+```
+docker run -it -v $(pwd):/app -w /app -p 8080:8080 node npm run serve
+```

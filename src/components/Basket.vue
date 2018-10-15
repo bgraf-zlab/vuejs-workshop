@@ -3,7 +3,7 @@
     <h2>Basket:</h2>
     <ul v-if="products.length !== 0">
       <li v-for="product in products" class="m-2">
-        {{ product.name }}@{{ product.price }}€
+        <product v-bind:name="product.name" v-bind:price="product.price"></product>
         <button class="btn btn-sm btn-danger"
                 v-on:click="removeProduct(product)">
           Remove
@@ -20,8 +20,11 @@
 </template>
 
 <script>
+import Product from './Product.vue'
+
 export default {
   name: 'basket',
+  components: { Product },
   props: [
   	'products'
   ],
