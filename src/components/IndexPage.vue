@@ -9,15 +9,14 @@
 import Basket from './Basket.vue';
 import ProductList from './ProductList.vue';
 
+import products from '../products';
+
 export default {
   name: 'index-page',
   components: { Basket, ProductList },
   data: function() {
     return {
-      products: [
-        { name: 'Schaufel', price: 50 },
-        { name: 'Fork', price: 70 }
-      ],
+      products: products,
       productsInBasket: []
     }
   },

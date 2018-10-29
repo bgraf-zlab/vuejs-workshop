@@ -18,6 +18,8 @@
 </template>
 
 <script>
+import products from '../products';
+
 export default {
   name: 'admin-view',
   data: function() {
@@ -32,7 +34,7 @@ export default {
         name: this.name,
         price: parseInt(this.price)
       }
-      this.$emit('productCreated', product);
+      products.push(product);
       this.name = null;
       this.price = null;
     }
