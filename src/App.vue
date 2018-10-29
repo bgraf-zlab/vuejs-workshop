@@ -19,8 +19,8 @@ export default {
     }
   },
   methods: {
-  	addProductToBasket: function(product) {
-    	this.productsInBasket.push(product);
+    addProductToBasket: function(product) {
+      this.productsInBasket.push(product);
     },
   }
 }
