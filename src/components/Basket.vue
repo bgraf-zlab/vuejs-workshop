@@ -26,19 +26,19 @@ export default {
   name: 'basket',
   components: { Product },
   props: [
-  	'products'
+    'products'
   ],
   data: function() {
 		return { }
   },
   computed: {
-  	basketSum: function() {
-    	return this.products.reduce((sum, product) => sum + product.price, 0);
+    basketSum: function() {
+      return this.products.reduce((sum, product) => sum + product.price, 0);
     }
   },
   methods: {
-  	removeProduct: function (product) {
-    	this.products.splice(this.products.indexOf(product), 1);
+    removeProduct: function (product) {
+      this.products.splice(this.products.indexOf(product), 1);
     }
   },
 }

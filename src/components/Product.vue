@@ -8,7 +8,7 @@
 export default {
   name: 'product',
   props: [
-  	'name',
+    'name',
     'price'
   ]
 }
