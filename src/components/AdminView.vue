@@ -27,7 +27,7 @@ export default {
     }
   },
   methods: {
-  	createProduct: function() {
+    createProduct: function() {
       let product = {
         name: this.name,
         price: parseInt(this.price)
