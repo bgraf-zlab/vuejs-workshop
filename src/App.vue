@@ -1,6 +1,14 @@
 <template>
   <div id="app" class="container my-4 p-4">
     <img src="./assets/logo.png" class="float-right">
+    <ul>
+      <li>
+        <router-link to="/">Produkte</router-link>
+      </li>
+      <li>
+        <router-link to="/admin">Admin</router-link>
+      </li>
+    </ul>
     <router-view></router-view>
   </div>
 </template>
@@ -8,7 +16,7 @@
 <script>
 import IndexPage from './components/IndexPage.vue';
 import AdminPage from './components/AdminPage.vue';
-import VueRouter from 'vue-router'
+import VueRouter from 'vue-router';
 
 const router = new VueRouter({
   routes: [
