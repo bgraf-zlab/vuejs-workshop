@@ -28,7 +28,7 @@ export default {
     }
   },
   methods: {
-  	addProductToBasket: function(product) {
+    addProductToBasket: function(product) {
       this.$emit('addProduct', product)
     }
   },
